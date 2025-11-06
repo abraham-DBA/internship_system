@@ -3,12 +3,23 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SmsController;
+use App\Http\Controllers\StudentController;
 
 Route::get('/send', [SmsController::class, 'send']);
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+})->name('home.page');
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::post('/save', [StudentController::class, 'store'])->name('student.save');
+
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 Route::get('test', function() {
