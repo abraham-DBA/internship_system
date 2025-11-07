@@ -21,23 +21,11 @@ Optional, nice-to-have:
 
 2) Create your environment file
 - Copy .env.example to .env
-- On Windows (PowerShell): copy .env.example .env
+- On Windows (PowerShell): cp .env.example .env
 - On macOS/Linux: cp .env.example .env
 
-3) Configure .env
-- Set APP_NAME, APP_URL as you prefer (default http://localhost)
-- Database (MySQL example):
-  - DB_CONNECTION=mysql
-  - DB_HOST=127.0.0.1
-  - DB_PORT=3306
-  - DB_DATABASE=internship_system
-  - DB_USERNAME=root
-  - DB_PASSWORD=your_password
-- Alternatively, to use SQLite:
-  - DB_CONNECTION=sqlite
-  - Create a file database/database.sqlite (empty file)
-  - Remove other DB_* lines or leave them unused
-- Sessions, cache, and queue are configured to use the database. Migrations will create the necessary tables.
+3) Ensure your Composer php is 8.2+
+- composer self-updateb   
 
 4) Install PHP dependencies
 - composer install
@@ -121,6 +109,13 @@ Then access the app via the URL printed by Sail (typically http://localhost).
 - Frontend tooling: Vite + Tailwind CSS + Alpine.js
 - Queues: database driver by default (queue:listen)
 - Sessions / Cache: database driver by default
+
+## What's New
+- 2025-11-07: Student Inquiries feature released. Students can submit inquiries via Contact; staff cohort auto-notified by email; dashboard page to manage inquiries with status workflow and automatic student resolution emails. See docs/ACHIEVEMENT_Student_Inquiries.md for details and a ready-to-copy WhatsApp announcement.
+
+## Email Development Guide
+For a complete, step-by-step guide on creating, sending, queuing, testing, and troubleshooting emails in this project, see:
+- docs/EMAILS.md
 
 ## Scripts Reference
 Composer (package manager for PHP):

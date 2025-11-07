@@ -9,18 +9,7 @@
 <body class="font-sans text-gray-800">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold">Internship Portal</h1>
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-gray-200">Home</a></li>
-          <li><a href="/about" class="hover:text-gray-200">About</a></li>
-          <li><a href="/contact" class="hover:text-gray-200 font-semibold underline">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <x-navbar />
 
   <!-- Hero Section -->
   <section class="bg-blue-100 text-center py-16 px-4">
@@ -60,26 +49,41 @@
   <section class="bg-blue-50 py-16 px-4">
     <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
       <h3 class="text-2xl font-semibold text-center text-blue-700 mb-6">Send Us a Message</h3>
-      <form class="space-y-4">
+      @if(session('success'))
+        <div class="mb-4 rounded-md bg-green-50 border border-green-200 text-green-800 px-4 py-3">
+          {{ session('success') }}
+        </div>
+      @endif
+      @if ($errors->any())
+        <div class="mb-4 rounded-md bg-red-50 border border-red-200 text-red-800 px-4 py-3">
+          <ul class="list-disc list-inside text-sm">
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+      <form class="space-y-4" action="{{ route('inquiries.store') }}" method="POST">
+        @csrf
         <div>
           <label class="block text-sm font-medium mb-1">Full Name</label>
-          <input type="text" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="John Doe" required>
+          <input type="text" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="John Doe" name="full_name" required>
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Email</label>
-          <input type="email" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="you@example.com" required>
+          <input type="email" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="you@example.com" name="email" required>
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Registration Number (Optional)</label>
-          <input type="text" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="REG12345">
+          <input type="text" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="REG12345" name="reg_number">
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Subject</label>
-          <input type="text" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="Inquiry about internship" required>
+          <input type="text" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="Inquiry about internship" name="subject" required>
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Message</label>
-          <textarea rows="5" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="Type your message here..." required></textarea>
+          <textarea rows="5" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="Type your message here..." required name="message"></textarea>
         </div>
 
         <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
@@ -94,7 +98,7 @@
     <div class="max-w-5xl mx-auto text-center">
       <h3 class="text-3xl font-semibold text-blue-700 mb-6">Our Office Location</h3>
       <div class="rounded-lg overflow-hidden shadow-lg">
-        <iframe 
+        <iframe
           class="w-full h-96"
           loading="lazy"
           allowfullscreen
@@ -106,28 +110,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-8">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 text-center md:text-left px-4">
-      <div>
-        <h4 class="font-bold mb-2">About</h4>
-        <p class="text-sm">The Internship Portal connects students, organizations, and universities efficiently for a seamless placement experience.</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Contact Info</h4>
-        <p class="text-sm">Email: info@internshipportal.com</p>
-        <p class="text-sm">Phone: +256 700 000000</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-4">
-          <a href="#" class="hover:text-gray-200">Facebook</a>
-          <a href="#" class="hover:text-gray-200">Twitter</a>
-          <a href="#" class="hover:text-gray-200">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <p class="text-center text-sm mt-6">© 2025 Internship Portal. All rights reserved.</p>
-  </footer>
+  <x-footer />
 
 </body>
 </html>

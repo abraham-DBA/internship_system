@@ -46,12 +46,12 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Mail::to('deejaylennocs@gmail.com')->queue(
+        Mail::to($user->email)->queue(
         new UserRegistered($user)
         );
 
         // Send SMS after registration
-        $smsService->send('+256702262806', 'Hi ' . $user->name . ', You have successfully joined DesisHub Online.');
+//        $smsService->send('+256702262806', 'Hi ' . $user->name . ', You have successfully joined DesisHub Online.');
 
         Auth::login($user);
 

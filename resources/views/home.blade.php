@@ -9,18 +9,12 @@
 <body class="font-sans text-gray-800">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold">Internship Portal</h1>
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-gray-200">Home</a></li>
-          <li><a href="/about" class="hover:text-gray-200">About</a></li>
-          <li><a href="/contact" class="hover:text-gray-200">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+{{--  <header class="bg-blue-600 text-white">--}}
+{{--    --}}
+{{--  </header>--}}
+
+  <x-navbar />
+
 
   <!-- Hero Section -->
   <section class="bg-blue-100 text-center py-16 px-4">
@@ -29,7 +23,7 @@
     <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Get Started</button>
   </section>
 
-  
+
   <!-- How It Works -->
   <section class="bg-blue-50 py-16 px-4">
     <h3 class="text-3xl font-semibold text-center text-blue-700 mb-10">How It Works</h3>
@@ -79,6 +73,11 @@
         <div>
           <label class="block text-sm font-medium mb-1">Student Contact</label>
           <input type="text" name="student_contact" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="+256 700 000000" required>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Student Email</label>
+          <input type="email" name="student_email" class="w-full border rounded-md px-3 py-2 focus:outline-blue-500" placeholder="john.doe@example.com" required>
         </div>
 
         <div>
@@ -143,28 +142,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-8">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 text-center md:text-left px-4">
-      <div>
-        <h4 class="font-bold mb-2">About</h4>
-        <p class="text-sm">This portal helps students manage and submit internship details efficiently.</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Contact Info</h4>
-        <p class="text-sm">Email: info@internshipportal.com</p>
-        <p class="text-sm">Phone: +256 700 000000</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-4">
-          <a href="#" class="hover:text-gray-200">Facebook</a>
-          <a href="#" class="hover:text-gray-200">Twitter</a>
-          <a href="#" class="hover:text-gray-200">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <p class="text-center text-sm mt-6">© 2025 Internship Portal. All rights reserved.</p>
-  </footer>
+  <x-footer />
 
 </body>
 </html>

@@ -9,18 +9,7 @@
 <body class="font-sans text-gray-800">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold">Internship Portal</h1>
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-gray-200">Home</a></li>
-          <li><a href="/about" class="hover:text-gray-200 font-semibold underline">About</a></li>
-          <li><a href="/contact" class="hover:text-gray-200">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <x-navbar />
 
   <!-- Hero / Page Title -->
   <section class="bg-blue-100 text-center py-16 px-4">
@@ -126,28 +115,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-8">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 text-center md:text-left px-4">
-      <div>
-        <h4 class="font-bold mb-2">About</h4>
-        <p class="text-sm">This portal simplifies the internship placement process for students and universities.</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Contact Info</h4>
-        <p class="text-sm">Email: info@internshipportal.com</p>
-        <p class="text-sm">Phone: +256 700 000000</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-4">
-          <a href="#" class="hover:text-gray-200">Facebook</a>
-          <a href="#" class="hover:text-gray-200">Twitter</a>
-          <a href="#" class="hover:text-gray-200">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <p class="text-center text-sm mt-6">© 2025 Internship Portal. All rights reserved.</p>
-  </footer>
+  <x-footer />
 
 </body>
 </html>

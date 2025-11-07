@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Guidelines – Internship Portal</title>
+  <style>
+    :root{--primary:#1e40af;--text:#0f172a;--muted:#475569;--border:#e2e8f0}
+    body{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif; color:var(--text); line-height:1.55; margin:24px}
+    .container{max-width:900px;margin:0 auto}
+    h1{font-size:26px;margin:0 0 8px 0;color:var(--primary)}
+    h2{font-size:20px;margin:28px 0 10px 0;color:var(--primary)}
+    p{margin:10px 0}
+    .subtle{color:var(--muted)}
+    .card{border:1px solid var(--border);border-radius:10px;padding:18px;margin:14px 0}
+    ul{margin:8px 0 8px 20px}
+    li{margin:6px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .badge{display:inline-block;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;border-radius:6px;padding:2px 8px;font-size:12px;margin-left:8px;vertical-align:middle}
+    .footer{margin-top:18px;font-size:12px;color:var(--muted)}
+    @media print{a[href]::after{content:" (" attr(href) ")"}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MUBS Internship Portal – Case Document <span class="badge">Version 1.0</span></h1>
+      <p class="subtle">Date: 07 Nov 2025</p>
+    </header>
+
+    <section class="card" aria-labelledby="case-purpose">
+      <h2 id="case-purpose">a) Case Description & Purpose (4 Marks)</h2>
+      <p><strong>Case:</strong> Makerere University Business School (MUBS) requires a streamlined way for students to submit internship placement information and for staff to manage, track, and respond to related inquiries.</p>
+      <p><strong>Organization:</strong> MUBS – Internship Coordination Office (ICO).</p>
+      <p><strong>Purpose of the Website:</strong></p>
+      <ul>
+        <li>Provide a centralized, secure portal for students to submit internship details (organization, contacts, course, notes).</li>
+        <li>Enable administrators to review, approve, and manage student submissions and inquiries efficiently.</li>
+        <li>Improve communication through automated email notifications (e.g., confirmation to students, alerts to staff cohort 2025, resolution updates).</li>
+        <li>Offer up‑to‑date announcements and deadlines to keep students informed.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="structure">
+      <h2 id="structure">b) Website Structure (4 Marks)</h2>
+      <ul>
+        <li><strong>Home</strong> (/<span class="subtle">or</span> /home)
+          <ul>
+            <li>Hero banner with welcome message and “Get Started”.</li>
+            <li>How It Works (4 steps: submit, verify, track, approve).</li>
+            <li>Student Internship Submission Form (name, reg. number, course, organization, contacts, email, notes).</li>
+            <li>Announcements (deadlines, new partners).</li>
+            <li>FAQ and testimonials.</li>
+          </ul>
+        </li>
+        <li><strong>About</strong> (/about)
+          <ul>
+            <li>Purpose and objectives of the portal.</li>
+            <li>Benefits (time saving, real‑time updates, transparency).</li>
+            <li>Team/Support contact details.</li>
+          </ul>
+        </li>
+        <li><strong>Contact</strong> (/contact)
+          <ul>
+            <li>Contact information (email, phone, office, hours).</li>
+            <li>Student Inquiry form (full name, email, reg. number, subject, message) with success banner on submit.</li>
+            <li>Location map (embedded).</li>
+          </ul>
+        </li>
+        <li><strong>Dashboard</strong> (/dashboard, authenticated)
+          <ul>
+            <li>Admin view with navigation and analytics.</li>
+            <li>Student Inquiries page (/inquiries): professional data table listing inquiries with status badges, submitted date, and actions.</li>
+            <li>Actions include: mark as done (updates status to completed/resolved and emails the student) and delete.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="design-features">
+      <h2 id="design-features">c) Design & Features (2 Marks)</h2>
+      <p><strong>Look & Feel:</strong> Clean, modern, and responsive interface using Tailwind CSS. Color palette centers on MUBS‑appropriate blues for trust and clarity, light neutrals for backgrounds, and accessible contrast for text and buttons.</p>
+      <div class="grid">
+        <div>
+          <p><strong>Layout & Components</strong></p>
+          <ul>
+            <li>Reusable Navbar (brand: “MUBS INTERNSHIP PORTAL”) with Home, About, Contact, and auth actions (Login/Register or Dashboard/Logout).</li>
+            <li>Reusable Footer with contact and social links.</li>
+            <li>Cards, badges, and tables styled for clarity and professionalism.</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>Key Features</strong></p>
+          <ul>
+            <li>Student submission form with validation and success messages.</li>
+            <li>Inquiry workflow: submissions default to <em>Pending</em>; staff cohort 2025 notified via email; resolution triggers a student email.</li>
+            <li>Dashboard management: status updates, deletion, and pagination.</li>
+            <li>Accessibility: focus states, semantic sections, and responsive design.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="subtle">Concept kept clear and realistic; scope aligns with actual implemented functionality in the current system.</p>
+    </section>
+
+    <section class="card" aria-labelledby="notes">
+      <h2 id="notes">Notes</h2>
+      <ul>
+        <li>The document is intentionally concise and suitable for a two‑page printout (A4/Letter at standard margins).</li>
+        <li>All content reflects the live routes and features: Home (/), About (/about), Contact (/contact), Dashboard (/dashboard), and Inquiries (/inquiries).</li>
+      </ul>
+    </section>
+
+    <p class="footer">© 2025 MUBS Internship Portal — Case Guidelines</p>
+  </div>
+</body>
+</html>
