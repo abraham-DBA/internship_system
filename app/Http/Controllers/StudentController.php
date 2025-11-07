@@ -142,6 +142,7 @@ class StudentController extends Controller
         $student->update($validated);
 
         return redirect()->route('dashboard')->with('success', 'Student updated successfully.');
+//        dd('update'); sanity check to see if the update is working
     }
 
     /**

@@ -102,7 +102,7 @@
 
                     <div class="border-t pt-4">
                         <div class="text-sm font-medium mb-2">Quick Edit</div>
-                        <form method="POST" action="{{ route('students.update', $student) }}" class="space-y-3">
+                        <form method="POST" action="{{ route('students.update', $student) }}" class="space-y-3" id="update">
                             @csrf
                             @method('PATCH')
                             <input name="full_name" value="{{ old('full_name', $student->full_name) }}" class="w-full border rounded-md h-9 px-3 text-sm" placeholder="Full Name" required />
@@ -112,19 +112,19 @@
                             <input name="student_contact" value="{{ old('student_contact', $student->student_contact) }}" class="w-full border rounded-md h-9 px-3 text-sm" placeholder="Contact" />
                             <input name="student_email" type="email" value="{{ old('student_email', $student->student_email) }}" class="w-full border rounded-md h-9 px-3 text-sm" placeholder="Email" />
                             <textarea name="notes" rows="3" class="w-full border rounded-md px-3 py-2 text-sm" placeholder="Notes">{{ old('notes', $student->notes) }}</textarea>
-                            <div class="flex items-center justify-between">
-                                <form method="POST" action="{{ route('students.destroy', $student) }}" onsubmit="return confirm('Delete this student? This cannot be undone.');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="h-9 px-3 inline-flex items-center justify-center rounded-md border bg-white text-red-600 hover:bg-red-50">
-                                        <i data-lucide="trash-2" class="h-4 w-4 mr-2"></i> Delete
+                                    <button class="h-9 px-3 inline-flex items-center justify-center rounded-md border bg-indigo-600 text-white hover:bg-indigo-700">
+                                        <i data-lucide="save" class="h-4 w-4 mr-2"></i> Save Changes
                                     </button>
-                                </form>
-                                <button type="submit" class="h-9 px-3 inline-flex items-center justify-center rounded-md border bg-indigo-600 text-white hover:bg-indigo-700">
-                                    <i data-lucide="save" class="h-4 w-4 mr-2"></i> Save Changes
-                                </button>
-                            </div>
                         </form>
+
+                        <form method="POST" action="{{ route('students.destroy', $student) }}" onsubmit="return confirm('Delete this student? This cannot be undone.');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="h-9 px-3 inline-flex items-center justify-center rounded-md border bg-white text-red-600 hover:bg-red-50">
+                                <i data-lucide="trash-2" class="h-4 w-4 mr-2"></i> Delete
+                            </button>
+                        </form>
+
                     </div>
                 </div>
             </div>
